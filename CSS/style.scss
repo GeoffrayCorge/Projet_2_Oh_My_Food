@@ -53,6 +53,10 @@ img{
     width: 100%;
 }
 
+h1, h2{
+    font-size: 1.3rem;
+    font-family: "roboto_medium";
+}
 
 .logo_header{
     width: 50%;
@@ -98,26 +102,32 @@ form::before {
     text-align: center;
     h1{
         margin: 0 45px 20px 45px;
-        font-size: 1.3rem;
-        font-family: "roboto_medium";
     }
-    p{
-        margin-bottom: 20px;
-        font-size: 1.1rem;
-        font-family: "roboto_thin";
-    }
-    a{
-        font-size: .9rem;
-        font-family: 'roboto_medium';
-        color: #ffffff;
-        border-radius: 30px;
-        padding: 10px 20px;
-        background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
-        margin: auto;
-    }
+        p{
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-family: "roboto_thin";
+        }
+            a{
+                font-size: .9rem;
+                font-family: 'roboto_medium';
+                color: #ffffff;
+                border-radius: 30px;
+                padding: 10px 20px;
+                background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
+                margin: auto;
+            }
 }
 
 
-#restaurant{
-    margin: 0 15px 0 15px;
+#use{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 20px 25px 20px;
+        ul li{
+            background-color: #f6f6f6;
+            padding: 25px;    
+            margin: 20px 0 20px 15px;
+            border-radius: 20px;    
+        }
 }
