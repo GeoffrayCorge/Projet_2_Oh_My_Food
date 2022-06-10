@@ -1,0 +1,10 @@
+@mixin box_shadow_form {
+    box-shadow: inset 0 8px 3px -4px #d5d5d5;
+    background-color: #eaeaea;
+}
+
+@mixin logo_il {
+    font-family: $fontawesome;
+    padding-right: 15px;
+}
+

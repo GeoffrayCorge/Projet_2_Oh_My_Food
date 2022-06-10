@@ -1,25 +1,3 @@
-@font-face {
-    font-family: "roboto";
-    src: url(../font/Roboto-Regular.ttf);
-}
-@font-face {
-    font-family: "roboto_thin";
-    src: url(../font/Roboto-Thin.ttf);
-}
-@font-face {
-    font-family: "roboto_medium";
-    src: url(../font/Roboto-Medium.ttf);
-}
-@font-face {
-    font-family: "roboto_bold";
-    src: url(../font/Roboto-Bold.ttf);
-}
-@font-face {
-    font-family: "shrikhand";
-    src: url(../font/Shrikhand-Regular.ttf);
-}
-
-
 * {
     box-sizing: border-box;
     /* Opera/IE 8+ */
@@ -29,14 +7,13 @@
     /* Safari/Chrome, autres WebKit */
     margin: 0;
     padding: 0;
-    list-style-type: none;
     font-family: "roboto";
+    list-style-type: none
 }
 
-$fontawesome: "fontawesome";
-$first_color: #9356DC;
-$second_color: #FF79DA;
-$third_color: #99E2D0;
+@import "font";
+@import "color";
+@import "mixin";
 
 
 #mobilesite {
@@ -44,44 +21,44 @@ $third_color: #99E2D0;
     margin: auto;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-img{
+img {
     width: 100%;
 }
 
-h1, h2{
+h1,
+h2 {
     font-size: 1.3rem;
     font-family: "roboto_medium";
 }
 
-.logo_header{
+.logo_header {
     width: 50%;
     display: block;
     margin: 20px auto 15px auto;
 }
 
 
-input[type=text]:focus{
+input[type=text]:focus {
     outline: none;
 }
 
-form{
+form {
+    @include box_shadow_form;
     border-width: 0;
-    background-color: #eaeaea;
     width: 100%;
     text-align: center;
-    box-shadow: inset 0 8px 3px -4px #d5d5d5;
-    input{
-        background-color: #eaeaea;
-        box-shadow: inset 0 8px 3px -4px #d5d5d5;
+
+    input {
+        @include box_shadow_form;
         padding: 15px 0 15px 0;
         font-size: 1.1rem;
         border: 0;
-    }    
+    }
 }
 
 form::before {
@@ -91,43 +68,106 @@ form::before {
     border: 1px solid var(--grey);
     border-radius: 15px 0 0 15px;
     background-color: var(--grey);
-}    
+}
 
 
-#reserve{
+#reserve {
     background-color: #f6f6f6;
     display: flex;
     flex-direction: column;
     padding: 40px 20px 50px 20px;
     text-align: center;
-    h1{
+
+    h1 {
         margin: 0 45px 20px 45px;
     }
-        p{
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            font-family: "roboto_thin";
-        }
-            a{
-                font-size: .9rem;
-                font-family: 'roboto_medium';
-                color: #ffffff;
-                border-radius: 30px;
-                padding: 10px 20px;
-                background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
-                margin: auto;
-            }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        font-family: "roboto_thin";
+    }
+
+    a {
+        font-size: .9rem;
+        font-family: 'roboto_medium';
+        color: #ffffff;
+        border-radius: 30px;
+        padding: 10px 20px;
+        background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
+        margin: auto;
+    }
 }
 
 
-#use{
+
+#use {
     display: flex;
     flex-direction: column;
     margin: 40px 20px 25px 20px;
-        ul li{
-            background-color: #f6f6f6;
-            padding: 25px;    
-            margin: 20px 0 20px 15px;
-            border-radius: 20px;    
-        }
+
+    ol {
+        counter-reset: li;
+    }
+
+    ol li {
+        background-color: #f6f6f6;
+        padding: 25px;
+        margin: 20px 0 20px 15px;
+        border-radius: 20px;
+        box-shadow: 0 6px 9px 0px #d5d5d5;
+    }
+
+    li:first-child::before {
+        @include logo_il;
+        content: "\f3cd";
+        color: #7e7e7e;
+    }
+
+    li:nth-child(2)::before {
+        @include logo_il;
+        content: "\f0ca";
+        color: #7e7e7e;
+    }
+
+    li:last-child::before {
+        @include logo_il;
+        content: "\f54e";
+        color: $first_color;
+    }
+
+    li::after{
+        position: absolute;
+        left: 22px;
+        width: 22px;
+        height: 22px;
+        background-color: $first_color;
+        border-radius: 50%;
+        color: #fff;
+        text-align: center;
+        counter-increment: li;
+        content: counter(li);
+    
+    }
+}
+
+#restaurant{
+    background-color: #f6f6f6;
+    padding: 50px 15px 0 15px;
+    h2{
+        padding-bottom: 20px;
+    }
+    .card {
+        width: 100%;
+        margin: 10px auto;
+        background-color: white;
+        box-shadow: 0 5px 10px #d2d2d2;
+        border-radius: 20px;
+        overflow: hidden;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .card img {
+        object-fit: cover;
+    }
 }

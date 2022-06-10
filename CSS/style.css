@@ -1,3 +1,16 @@
+* {
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  -moz-box-sizing: border-box;
+  /* Firefox, autres Gecko */
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, autres WebKit */
+  margin: 0;
+  padding: 0;
+  font-family: "roboto";
+  list-style-type: none;
+}
+
 @font-face {
   font-family: "roboto";
   src: url(../font/Roboto-Regular.ttf);
@@ -23,19 +36,6 @@
   src: url(../font/Shrikhand-Regular.ttf);
 }
 
-* {
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  -moz-box-sizing: border-box;
-  /* Firefox, autres Gecko */
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, autres WebKit */
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  font-family: "roboto";
-}
-
 #mobilesite {
   max-width: 800px;
   margin: auto;
@@ -50,7 +50,8 @@ img {
   width: 100%;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 1.3rem;
   font-family: "roboto_medium";
 }
@@ -66,18 +67,18 @@ input[type=text]:focus {
 }
 
 form {
-  border-width: 0;
-  background-color: #eaeaea;
-  width: 100%;
-  text-align: center;
   -webkit-box-shadow: inset 0 8px 3px -4px #d5d5d5;
           box-shadow: inset 0 8px 3px -4px #d5d5d5;
+  background-color: #eaeaea;
+  border-width: 0;
+  width: 100%;
+  text-align: center;
 }
 
 form input {
-  background-color: #eaeaea;
   -webkit-box-shadow: inset 0 8px 3px -4px #d5d5d5;
           box-shadow: inset 0 8px 3px -4px #d5d5d5;
+  background-color: #eaeaea;
   padding: 15px 0 15px 0;
   font-size: 1.1rem;
   border: 0;
@@ -137,10 +138,75 @@ form::before {
   margin: 40px 20px 25px 20px;
 }
 
-#use ul li {
+#use ol {
+  counter-reset: li;
+}
+
+#use ol li {
   background-color: #f6f6f6;
   padding: 25px;
   margin: 20px 0 20px 15px;
   border-radius: 20px;
+  -webkit-box-shadow: 0 6px 9px 0px #d5d5d5;
+          box-shadow: 0 6px 9px 0px #d5d5d5;
+}
+
+#use li:first-child::before {
+  font-family: "fontawesome";
+  padding-right: 15px;
+  content: "\f3cd";
+  color: #7e7e7e;
+}
+
+#use li:nth-child(2)::before {
+  font-family: "fontawesome";
+  padding-right: 15px;
+  content: "\f0ca";
+  color: #7e7e7e;
+}
+
+#use li:last-child::before {
+  font-family: "fontawesome";
+  padding-right: 15px;
+  content: "\f54e";
+  color: #9356DC;
+}
+
+#use li::after {
+  position: absolute;
+  left: 22px;
+  width: 22px;
+  height: 22px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  counter-increment: li;
+  content: counter(li);
+}
+
+#restaurant {
+  background-color: #f6f6f6;
+  padding: 50px 15px 0 15px;
+}
+
+#restaurant h2 {
+  padding-bottom: 20px;
+}
+
+#restaurant .card {
+  width: 100%;
+  margin: 10px auto;
+  background-color: white;
+  -webkit-box-shadow: 0 5px 10px #d2d2d2;
+          box-shadow: 0 5px 10px #d2d2d2;
+  border-radius: 20px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+#restaurant .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */
