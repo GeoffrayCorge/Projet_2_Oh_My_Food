@@ -119,24 +119,24 @@ form::before {
     }
 
     li:first-child::before {
-        @include logo_il;
+        @include logo_li;
         content: "\f3cd";
         color: #7e7e7e;
     }
 
     li:nth-child(2)::before {
-        @include logo_il;
+        @include logo_li;
         content: "\f0ca";
         color: #7e7e7e;
     }
 
     li:last-child::before {
-        @include logo_il;
+        @include logo_li;
         content: "\f54e";
         color: $first_color;
     }
 
-    li::after{
+    li::after {
         position: absolute;
         left: 22px;
         width: 22px;
@@ -147,27 +147,95 @@ form::before {
         text-align: center;
         counter-increment: li;
         content: counter(li);
-    
+
     }
 }
 
-#restaurant{
+#restaurant {
     background-color: #f6f6f6;
-    padding: 50px 15px 0 15px;
-    h2{
+    padding: 50px 20px 50px 20px;
+
+    h2 {
         padding-bottom: 20px;
     }
+
     .card {
         width: 100%;
-        margin: 10px auto;
+        margin: 20px auto;
         background-color: white;
-        box-shadow: 0 5px 10px #d2d2d2;
+        box-shadow: 0 0px 10px #d2d2d2;
         border-radius: 20px;
         overflow: hidden;
-        border-radius: 20px 20px 0 0;
+    }
+
+    .card_image {
+        height: 190px;
     }
 
     .card img {
         object-fit: cover;
+        height: 190px;
     }
+
+    #palette, #francaise, #delice{
+        object-position: 0 -55px;
+    }
+
+    #note{
+        object-position: 0 -170px;
+    }
+
+    .card_body {
+        height: 80px;
+        padding: 10px;
+        line-height: 25px;
+    }
+
+    .fa-heart{
+        font-size: 1.5rem;
+        position: relative;
+        left: 315px;
+        top: -35px;
+    }
+
+    #btn{
+        display: none;
+    }
+    
+
+    #btn:checked + label > .fa-solid {
+        color: $first_color;
+    }
+    
+}
+
+footer{
+    background-color: #353535;
+    color: #fff;
+    padding: 20px 0 30px 20px;
+    line-height: 25px;
+
+    h2{
+        font-family: "shrikhand";
+        font-weight: normal;
+        padding-bottom: 10px;
+        font-size: 1.3rem;
+    }
+
+    li:first-child::before {
+        @include logo_li;
+        content: "\f2e7";
+        font-size: .9rem;
+    }
+
+    li:nth-child(2)::before {
+        @include logo_li;
+        content: "\f363";
+        font-size: .9rem;
+    }
+
+    a{
+        color: #fff;
+    }
+
 }

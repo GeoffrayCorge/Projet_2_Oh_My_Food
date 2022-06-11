@@ -187,7 +187,7 @@ form::before {
 
 #restaurant {
   background-color: #f6f6f6;
-  padding: 50px 15px 0 15px;
+  padding: 50px 20px 50px 20px;
 }
 
 #restaurant h2 {
@@ -196,17 +196,84 @@ form::before {
 
 #restaurant .card {
   width: 100%;
-  margin: 10px auto;
+  margin: 20px auto;
   background-color: white;
-  -webkit-box-shadow: 0 5px 10px #d2d2d2;
-          box-shadow: 0 5px 10px #d2d2d2;
+  -webkit-box-shadow: 0 0px 10px #d2d2d2;
+          box-shadow: 0 0px 10px #d2d2d2;
   border-radius: 20px;
   overflow: hidden;
-  border-radius: 20px 20px 0 0;
+}
+
+#restaurant .card_image {
+  height: 190px;
 }
 
 #restaurant .card img {
   -o-object-fit: cover;
      object-fit: cover;
+  height: 190px;
+}
+
+#restaurant #palette, #restaurant #francaise, #restaurant #delice {
+  -o-object-position: 0 -55px;
+     object-position: 0 -55px;
+}
+
+#restaurant #note {
+  -o-object-position: 0 -170px;
+     object-position: 0 -170px;
+}
+
+#restaurant .card_body {
+  height: 80px;
+  padding: 10px;
+  line-height: 25px;
+}
+
+#restaurant .fa-heart {
+  font-size: 1.5rem;
+  position: relative;
+  left: 315px;
+  top: -35px;
+}
+
+#restaurant #btn {
+  display: none;
+}
+
+#restaurant #btn:checked + label > .fa-solid {
+  color: #9356DC;
+}
+
+footer {
+  background-color: #353535;
+  color: #fff;
+  padding: 20px 0 30px 20px;
+  line-height: 25px;
+}
+
+footer h2 {
+  font-family: "shrikhand";
+  font-weight: normal;
+  padding-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+footer li:first-child::before {
+  font-family: "fontawesome";
+  padding-right: 15px;
+  content: "\f2e7";
+  font-size: .9rem;
+}
+
+footer li:nth-child(2)::before {
+  font-family: "fontawesome";
+  padding-right: 15px;
+  content: "\f363";
+  font-size: .9rem;
+}
+
+footer a {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
