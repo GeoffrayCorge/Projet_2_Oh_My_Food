@@ -205,13 +205,13 @@ form::before {
 }
 
 #restaurant .card_image {
-  height: 190px;
+  height: 170px;
 }
 
 #restaurant .card img {
   -o-object-fit: cover;
      object-fit: cover;
-  height: 190px;
+  height: 170px;
 }
 
 #restaurant #palette, #restaurant #francaise, #restaurant #delice {
@@ -220,8 +220,8 @@ form::before {
 }
 
 #restaurant #note {
-  -o-object-position: 0 -170px;
-     object-position: 0 -170px;
+  -o-object-position: 0 -155px;
+     object-position: 0 -155px;
 }
 
 #restaurant .card_body {
@@ -233,7 +233,7 @@ form::before {
 #restaurant .fa-heart {
   font-size: 1.5rem;
   position: relative;
-  left: 315px;
+  left: 275px;
   top: -35px;
 }
 
@@ -275,5 +275,60 @@ footer li:nth-child(2)::before {
 
 footer a {
   color: #fff;
+}
+
+.header_restaurant {
+  height: 50px;
+}
+
+.header_restaurant a {
+  font-size: 1.2rem;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  text-align: center;
+}
+
+.header_restaurant img {
+  border: 0 auto 0 auto;
+}
+
+top {
+  height: 200px;
+}
+
+top img {
+  z-index: -1;
+  position: relative;
+}
+
+.main_menu {
+  margin-top: -50px;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  padding: 30px 15px 10px 15px;
+}
+
+.main_menu h1 {
+  font-family: "shrikhand";
+}
+
+.main_menu h2 {
+  padding: 40px 0 20px 0;
+}
+
+.main_menu .menu {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 6px 9px 0px #d5d5d5;
+          box-shadow: 0 6px 9px 0px #d5d5d5;
 }
 /*# sourceMappingURL=style.css.map */

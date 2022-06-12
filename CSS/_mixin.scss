@@ -3,8 +3,16 @@
     background-color: #eaeaea;
 }
 
-@mixin logo_il {
+@mixin logo_li {
     font-family: $fontawesome;
     padding-right: 15px;
 }
 
+@mixin card_welcome {
+    width: 100%;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0px 10px #d2d2d2;
+    border-radius: 20px;
+    overflow: hidden;
+}
