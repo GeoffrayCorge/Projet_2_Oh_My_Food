@@ -36,6 +36,11 @@ h2 {
     font-family: "roboto_medium";
 }
 
+.fa-heart{
+    font-size: 1.5rem;
+    position: relative;
+}
+
 .logo_header {
     width: 50%;
     display: block;
@@ -79,7 +84,7 @@ form::before {
     text-align: center;
 
     h1 {
-        margin: 0 45px 20px 45px;
+        margin: 0 60px 20px 60px;
     }
 
     p {
@@ -89,22 +94,18 @@ form::before {
     }
 
     a {
-        font-size: .9rem;
-        font-family: 'roboto_medium';
-        color: #ffffff;
-        border-radius: 30px;
-        padding: 10px 20px;
-        background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
-        margin: auto;
+        @include btn_a;
     }
 }
-
-
 
 #use {
     display: flex;
     flex-direction: column;
     margin: 40px 20px 25px 20px;
+
+    h2{
+        font-size: 1.4rem;
+    }
 
     ol {
         counter-reset: li;
@@ -116,6 +117,10 @@ form::before {
         margin: 20px 0 20px 15px;
         border-radius: 20px;
         box-shadow: 0 6px 9px 0px #d5d5d5;
+    }
+
+    li:last-child{
+        background-color: #f5edff;
     }
 
     li:first-child::before {
@@ -164,43 +169,71 @@ form::before {
     }
 
     .card_image {
-        height: 170px;
+        height: 190px;
+        position: relative;
     }
 
     .card img {
         object-fit: cover;
-        height: 170px;
+        height: 190px;
+    }
+
+    .new{
+        color: #3a8562;
+        background-color: #99e2cf;
+        padding: 7px 12px;
+        width: fit-content;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-family: 'roboto_medium';
+        font-size: .8rem;
+        border-radius: 2px;
+        font-weight: bold;
     }
 
     #palette, #francaise, #delice{
-        object-position: 0 -55px;
+        object-position: bottom;
     }
 
     #note{
-        object-position: 0 -155px;
+        object-position: 0 -140px;
     }
 
     .card_body {
         height: 80px;
-        padding: 10px;
+        padding: 15px;
         line-height: 25px;
     }
 
-    .fa-heart{
-        font-size: 1.5rem;
-        position: relative;
+    h3{
+        font-weight: bold;
+    }
+
+    p{
+        font-family: 'roboto_thin';
+    }
+
+    .fa-regular{
         left: 275px;
         top: -35px;
+    }
+
+    .fa-solid{
+        top: -35px;
+        left: 251px;
+        color: transparent;
+    }
+
+    .fa-solid:hover{
+        background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
+        -webkit-background-clip: text;
     }
 
     #btn{
         display: none;
     }
     
-
-    #btn:checked + label > .fa-solid {
-        color: $first_color;
-    }
     
 }
 
@@ -212,7 +245,7 @@ footer{
 
     h2{
         font-family: "shrikhand";
-        font-weight: normal;
+        font-weight: lighter;
         padding-bottom: 10px;
         font-size: 1.3rem;
     }
@@ -256,6 +289,11 @@ top {
     img{
     z-index: -1;
     position: relative;
+    object-fit: cover;
+    height: 250px;
+    }
+    #enchant{
+        object-position: 0 -160px;
     }
 }
 .main_menu{
@@ -266,19 +304,105 @@ top {
 
     h1{
         font-family: "shrikhand";
+        font-size: 2rem;
     }
 
+    .fa-regular{
+        top: -35px;
+        right: -320px;
+    }
+
+    .fa-solid{
+        top: -35px;
+        right: -296px;
+        color: transparent;
+    }
+
+    .fa-solid:hover{
+        background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
+        -webkit-background-clip: text;
+    }
+
+
     h2{
-        padding : 40px 0 20px 0;
+        margin : 20px 0 20px 0;
+        font-family: 'roboto_thin';
+        border-bottom: 4px solid $third_color;
+        padding: 0 15px 10px 0;
+        width: 50px;
+
     }
 
     .menu{
         background-color: #fff;
-        padding: 20px;
+        padding: 15px 12px;
         border-radius: 20px;
         margin-bottom: 15px;
         display: flex;
         justify-content: space-between;
         box-shadow: 0 6px 9px 0px #d5d5d5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card_title {
+        line-height: 25px;
+    }
+
+    p:nth-child(2){
+        font-family: 'roboto_thin';
+    }
+
+    .progress{
+        font-family: $fontawesome;
+        content: "\f00c";
+        color: $third_color;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        background-color: #FFFF ;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        margin-top: 10px;
+        margin-right: -50px;
+    }
+
+    .price{
+        position: relative;
+        bottom: -25px;
+        font-weight: bold
+    }
+
+    .order{
+        @include btn_a;
+        padding: 20px 35px;
+        display: block;
+        margin: 50px 90px 80px 90px;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+
+}
+
+.menu_1{
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+.menu_2{
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-top: 100%;
+        height: 300%;
+    }
+    to {
+        margin-top: 0%;
+        height: 100% ;
     }
 }

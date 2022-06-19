@@ -16,3 +16,13 @@
     border-radius: 20px;
     overflow: hidden;
 }
+
+@mixin btn_a{
+    font-size: .9rem;
+    font-family: 'roboto_medium';
+    color: $background_color;
+    border-radius: 30px;
+    padding: 15px 20px;
+    background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
+    margin: auto;
+}
