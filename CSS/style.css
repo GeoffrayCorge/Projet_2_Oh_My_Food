@@ -36,6 +36,42 @@
   src: url(../font/Shrikhand-Regular.ttf);
 }
 
+@-webkit-keyframes mymove {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes mymove {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    margin-top: 100%;
+    height: 300%;
+  }
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-top: 100%;
+    height: 300%;
+  }
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}
+
 #mobilesite {
   max-width: 800px;
   margin: auto;
@@ -269,6 +305,34 @@ form::before {
 }
 
 #restaurant .fa-regular {
+  position: relative;
+  overflow: hidden;
+}
+
+#restaurant .fa-solid::after {
+  content: "\f004";
+  position: absolute;
+  color: transparent;
+  left: 0;
+  top: 30px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  cursor: pointer;
+}
+
+#restaurant .fa-solid {
+  color: transparent;
+  overflow: hidden;
+}
+
+#restaurant .fa-solid:hover::after {
+  top: 0;
+}
+
+#restaurant .fa-regular {
   left: 275px;
   top: -35px;
 }
@@ -276,13 +340,6 @@ form::before {
 #restaurant .fa-solid {
   top: -35px;
   left: 251px;
-  color: transparent;
-}
-
-#restaurant .fa-solid:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
-  -webkit-background-clip: text;
 }
 
 #restaurant #btn {
@@ -367,6 +424,34 @@ top #enchant {
 }
 
 .main_menu .fa-regular {
+  position: relative;
+  overflow: hidden;
+}
+
+.main_menu .fa-solid::after {
+  content: "\f004";
+  position: absolute;
+  color: transparent;
+  left: 0;
+  top: 30px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  cursor: pointer;
+}
+
+.main_menu .fa-solid {
+  color: transparent;
+  overflow: hidden;
+}
+
+.main_menu .fa-solid:hover::after {
+  top: 0;
+}
+
+.main_menu .fa-regular {
   top: -35px;
   right: -320px;
 }
@@ -374,13 +459,6 @@ top #enchant {
 .main_menu .fa-solid {
   top: -35px;
   right: -296px;
-  color: transparent;
-}
-
-.main_menu .fa-solid:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
-  -webkit-background-clip: text;
 }
 
 .main_menu h2 {
@@ -416,7 +494,7 @@ top #enchant {
   font-family: 'roboto_thin';
 }
 
-.main_menu .progress {
+.main_menu .bar::after {
   font-family: "fontawesome";
   content: "\f00c";
   color: #99E2D0;
@@ -433,13 +511,33 @@ top #enchant {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 10px;
-  margin-right: -50px;
+  margin: 30px auto;
+}
+
+.main_menu .bar {
+  background-color: #99E2D0;
+  width: 100px;
+  margin: -15px -120px;
+}
+
+.main_menu .menu:hover .bar {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.main_menu .menu:hover .bar::after {
+  -webkit-animation: mymove .7s;
+          animation: mymove .7s;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
 }
 
 .main_menu .price {
   position: relative;
   bottom: -25px;
+  right: 30px;
   font-weight: bold;
 }
 
@@ -473,25 +571,18 @@ top #enchant {
           animation-name: slidein;
 }
 
-@-webkit-keyframes slidein {
-  from {
-    margin-top: 100%;
-    height: 300%;
-  }
-  to {
-    margin-top: 0%;
-    height: 100%;
-  }
+.order {
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
 }
 
-@keyframes slidein {
-  from {
-    margin-top: 100%;
-    height: 300%;
-  }
-  to {
-    margin-top: 0%;
-    height: 100%;
-  }
+.order:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 /*# sourceMappingURL=style.css.map */

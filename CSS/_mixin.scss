@@ -26,3 +26,32 @@
     background: linear-gradient(to bottom, $second_color 0%, $first_color 100%);
     margin: auto;
 }
+
+@mixin heart{
+    .fa-regular{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .fa-solid::after{
+        content: "\f004";
+        position: absolute;
+        color: transparent;
+        left: 0;
+        top: 30px;
+        transition: all 1s;
+        background: $mix_color;
+        -webkit-background-clip: text;
+        cursor: pointer;
+    }
+
+    .fa-solid{
+        color: transparent;
+        overflow: hidden;
+    }
+
+    .fa-solid:hover::after{
+        top: 0;
+    }
+
+}
