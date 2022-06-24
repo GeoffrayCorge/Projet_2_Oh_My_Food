@@ -72,6 +72,24 @@
   }
 }
 
+@-webkit-keyframes loading {
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+
 #mobilesite {
   max-width: 800px;
   margin: auto;
@@ -293,7 +311,7 @@ form::before {
 #restaurant .card_body {
   height: 80px;
   padding: 15px;
-  line-height: 25px;
+  line-height: 15px;
 }
 
 #restaurant h3 {
@@ -304,19 +322,18 @@ form::before {
   font-family: 'roboto_thin';
 }
 
-#restaurant .fa-regular {
-  position: relative;
-  overflow: hidden;
+#restaurant .card_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#restaurant .fa-solid::after {
-  content: "\f004";
-  position: absolute;
-  color: transparent;
-  left: 0;
-  top: 30px;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+#restaurant .heart_mix:hover .fa-solid {
+  -webkit-transition: all 4s;
+  transition: all 4s;
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
   -webkit-background-clip: text;
@@ -325,21 +342,8 @@ form::before {
 
 #restaurant .fa-solid {
   color: transparent;
-  overflow: hidden;
-}
-
-#restaurant .fa-solid:hover::after {
-  top: 0;
-}
-
-#restaurant .fa-regular {
-  left: 275px;
-  top: -35px;
-}
-
-#restaurant .fa-solid {
-  top: -35px;
-  left: 251px;
+  position: absolute;
+  left: 316px;
 }
 
 #restaurant #btn {
@@ -424,34 +428,6 @@ top #enchant {
 }
 
 .main_menu .fa-regular {
-  position: relative;
-  overflow: hidden;
-}
-
-.main_menu .fa-solid::after {
-  content: "\f004";
-  position: absolute;
-  color: transparent;
-  left: 0;
-  top: 30px;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
-  -webkit-background-clip: text;
-  cursor: pointer;
-}
-
-.main_menu .fa-solid {
-  color: transparent;
-  overflow: hidden;
-}
-
-.main_menu .fa-solid:hover::after {
-  top: 0;
-}
-
-.main_menu .fa-regular {
   top: -35px;
   right: -320px;
 }
@@ -483,11 +459,32 @@ top #enchant {
   -webkit-box-shadow: 0 6px 9px 0px #d5d5d5;
           box-shadow: 0 6px 9px 0px #d5d5d5;
   overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.main_menu .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 
 .main_menu .card_title {
   line-height: 25px;
+  overflow: hidden;
+  height: 50px;
+}
+
+.main_menu .card_title h3 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.main_menu .card_title p {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .main_menu p:nth-child(2) {
@@ -499,8 +496,8 @@ top #enchant {
   content: "\f00c";
   color: #99E2D0;
   border-radius: 50%;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   background-color: #FFFF;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -511,18 +508,19 @@ top #enchant {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 30px auto;
+  margin: 30px 25px;
+  font-size: 1.3rem;
 }
 
 .main_menu .bar {
   background-color: #99E2D0;
-  width: 100px;
-  margin: -15px -120px;
+  width: 110px;
+  margin: -20px -125px;
 }
 
 .main_menu .menu:hover .bar {
-  -webkit-transform: translateX(-100px);
-          transform: translateX(-100px);
+  -webkit-transform: translateX(-80px);
+          transform: translateX(-80px);
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
 }
@@ -534,10 +532,16 @@ top #enchant {
           animation-delay: .3s;
 }
 
+.main_menu .menu:hover .card {
+  width: 250px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  white-space: nowrap;
+}
+
 .main_menu .price {
   position: relative;
   bottom: -25px;
-  right: 30px;
   font-weight: bold;
 }
 
@@ -569,6 +573,45 @@ top #enchant {
           animation-duration: 3s;
   -webkit-animation-name: slidein;
           animation-name: slidein;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+.menu_3 {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.fa-spinner {
+  font-size: 2.5rem;
+  margin-top: 100%;
+  -webkit-animation: mymove 2s infinite;
+          animation: mymove 2s infinite;
+  position: fixed;
+  all: unset;
+}
+
+.spinner {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  -webkit-animation: loading 3s;
+          animation: loading 3s;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  z-index: -1;
 }
 
 .order {

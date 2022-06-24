@@ -12,3 +12,13 @@
         height: 100% ;
     }
 }
+
+@keyframes loading{
+    0% {
+        z-index: 2;
+    }
+
+    100% {
+        z-index: -1;
+    }
+}
