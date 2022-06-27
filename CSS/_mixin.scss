@@ -4,8 +4,8 @@
 }
 
 @mixin logo_li {
-    font-family: $fontawesome;
     padding-right: 15px;
+    color: #7e7e7e;
 }
 
 @mixin card_welcome {

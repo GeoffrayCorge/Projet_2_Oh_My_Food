@@ -96,6 +96,10 @@ form::before {
 
     a {
         @include btn_a;
+        &:hover{
+        transform: scale(1.1);
+        transition: all .2s ease-in-out;
+    }
     }
 }
 
@@ -107,42 +111,35 @@ form::before {
     h2{
         font-size: 1.4rem;
     }
+}
 
-    ol {
+ol {
         counter-reset: li;
-    }
 
-    ol li {
+    li {
         background-color: $background_color;
         padding: 25px;
         margin: 20px 0 20px 15px;
         border-radius: 20px;
         box-shadow: 0 6px 9px 0px #d5d5d5;
-    }
-
-    li:last-child{
+    &:hover{
         background-color: #f5edff;
-    }
+        box-shadow: 0 9px 12px 0px #d5d5d5;
+        color: $first_color;
 
-    li:first-child::before {
-        @include logo_li;
-        content: "\f3cd";
-        color: #7e7e7e;
     }
-
-    li:nth-child(2)::before {
-        @include logo_li;
-        content: "\f0ca";
-        color: #7e7e7e;
     }
+}
 
-    li:last-child::before {
-        @include logo_li;
-        content: "\f54e";
+    #use li:hover i{
         color: $first_color;
     }
 
-    li::after {
+    #use .mobile, .list, .store {
+        @include logo_li;
+    }
+
+    #use li::after {
         position: absolute;
         left: 22px;
         width: 22px;
@@ -155,7 +152,7 @@ form::before {
         content: counter(li);
 
     }
-}
+
 
 #restaurant {
     background-color: $background_color;
@@ -218,27 +215,32 @@ form::before {
     .card_title{
         display: flex;
         justify-content: space-between;
+        font-family: $fontawesome;
+        content: "\f004";
     }
+}
+    
 
+    .heart_mix{
+        position: relative;
 
-    .heart_mix:hover .fa-solid{
-        transition: all 4s;
+    &:hover i{
         background: $mix_color;
         -webkit-background-clip: text;
         cursor: pointer;
     }
 
     .fa-solid{
-        color: transparent;
         position: absolute;
-        left: 316px;
+        left: 0;
+        color: transparent;
+        transition: background 1s ease;    
+        background: transparent;
     }
     
     #btn{
         display: none;
     }
-    
-    
 }
 
 footer{
@@ -319,9 +321,18 @@ top {
     }
 
     .fa-solid{
+        color: transparent;
         top: -35px;
         right: -296px;
     }
+
+    .fa-solid:hover{
+        transition: all 4s;
+        background: $mix_color;
+        -webkit-background-clip: text;
+        cursor: pointer;
+    }
+
 
     h2{
         margin : 20px 0 20px 0;
@@ -427,40 +438,32 @@ top {
 
 }
 
-.menu_1{
-    animation-duration: 3s;
-    animation-name: slidein;
-}
 
-.menu_2{
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-delay: .5s;
-}
+@for $i from 1 to 9 {
+    .menu_#{$i} {
+        animation-duration: .6s*$i;
+        animation-name: slidein;
+        animation-timing-function: ease-in-out;
+    }
+} 
 
-.menu_3{
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-delay: 1s;
-}
 .fa-spinner{
     font-size: 2.5rem;
-    margin-top: 100%;
-    animation: mymove 2s infinite;
+    animation: mymove 2s infinite forwards;
     position: fixed;
-    all: unset;
 }
 
 .spinner{
     position: absolute;
     height: 100vh;
     width: 100%;
-    animation: loading 3s;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
     align-items: center;
     justify-content: center;
     display: flex;
     background-color: white;
-    z-index: -1;
 }
 
 
@@ -472,3 +475,31 @@ top {
         transform: scale(1.2);
     }
 }
+
+#box {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    transition: background 1s ease;
+    -webkit-background-clip: text;
+}
+
+  
+  .little_box::before {
+    font-family: $fontawesome;
+    content: "\f004";
+    font-size: 200%;
+    transition: background 1s ease;
+  }
+
+  .testt{
+    background-color: yellow;
+    -webkit-background-clip: text;
+
+  }
+  
+  #box:hover{
+    background: #3d91b8;
+  }
+
+
