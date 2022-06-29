@@ -4,9 +4,18 @@
 }
 
 @mixin logo_li {
+    font-family: $fontawesome;
     padding-right: 15px;
     color: #7e7e7e;
 }
+
+@mixin logo_li_footer {
+    font-family: $fontawesome;
+    padding-right: 15px;
+    color: #FFFF;
+    font-size: .9rem;
+}
+
 
 @mixin card_welcome {
     width: 100%;
