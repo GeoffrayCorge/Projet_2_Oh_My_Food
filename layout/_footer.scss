@@ -1,0 +1,28 @@
+footer {
+    background-color: #353535;
+    color: #fff;
+    padding: 20px 0 30px 20px;
+    line-height: 25px;
+
+    h2 {
+        font-family: "shrikhand";
+        font-weight: lighter;
+        padding-bottom: 10px;
+        font-size: 1.3rem;
+    }
+
+    li:first-child::before {
+        @include logo_li_footer;
+        content: "\f2e7";
+    }
+
+    li:nth-child(2)::before {
+        @include logo_li_footer;
+        content: "\f363";
+    }
+
+    a {
+        color: #fff;
+    }
+
+}

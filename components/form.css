@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "roboto";
+  src: url(font/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "roboto_thin";
+  src: url(font/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: "roboto_medium";
+  src: url(font/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "roboto_bold";
+  src: url(font/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: "shrikhand";
+  src: url(font/Shrikhand-Regular.ttf);
+}
+
+form {
+  -webkit-box-shadow: inset 0 8px 3px -4px #d5d5d5;
+          box-shadow: inset 0 8px 3px -4px #d5d5d5;
+  background-color: #eaeaea;
+  border-width: 0;
+  width: 100%;
+  text-align: center;
+}
+
+form input {
+  -webkit-box-shadow: inset 0 8px 3px -4px #d5d5d5;
+          box-shadow: inset 0 8px 3px -4px #d5d5d5;
+  background-color: #eaeaea;
+  padding: 15px 0 15px 0;
+  font-size: 1.1rem;
+  border: 0;
+}
+
+form::before {
+  font-family: "fontawesome";
+  content: "\f3c5";
+  padding: 15px;
+  border-radius: 15px 0 0 15px;
+}
+/*# sourceMappingURL=form.css.map */

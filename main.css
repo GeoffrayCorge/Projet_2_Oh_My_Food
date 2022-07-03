@@ -1,0 +1,759 @@
+* {
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  -moz-box-sizing: border-box;
+  /* Firefox, autres Gecko */
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, autres WebKit */
+  margin: 0;
+  padding: 0;
+  font-family: "roboto";
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url(font/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "roboto_thin";
+  src: url(font/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: "roboto_medium";
+  src: url(font/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "roboto_bold";
+  src: url(font/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: "shrikhand";
+  src: url(font/Shrikhand-Regular.ttf);
+}
+
+@-webkit-keyframes mymove {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes mymove {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    margin-top: 20%;
+    opacity: 0;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-top: 20%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    z-index: 2;
+  }
+  99% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    z-index: 2;
+  }
+  99% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.logo_header {
+  width: 50%;
+  display: block;
+  margin: 20px auto 15px auto;
+}
+
+.header_restaurant {
+  height: 50px;
+}
+
+.header_restaurant a {
+  font-size: 1.2rem;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  text-align: center;
+}
+
+#reserve {
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px 20px 50px 20px;
+  text-align: center;
+}
+
+#reserve h1 {
+  margin: 0 60px 20px 60px;
+}
+
+#reserve p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-family: "roboto_thin";
+}
+
+#reserve a {
+  font-size: .9rem;
+  font-family: 'roboto_medium';
+  color: #f6f6f6;
+  border-radius: 30px;
+  padding: 15px 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  margin: auto;
+  opacity: 1;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+}
+
+#reserve a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: .8;
+}
+
+#use {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 40px 20px 25px 20px;
+}
+
+#use h2 {
+  font-size: 1.4rem;
+}
+
+#use ol {
+  counter-reset: li;
+}
+
+#use ol li {
+  background-color: #f6f6f6;
+  padding: 25px;
+  margin: 20px 0 20px 15px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 6px 9px 0px #d5d5d5;
+          box-shadow: 0 6px 9px 0px #d5d5d5;
+  position: relative;
+}
+
+#use ol li:hover {
+  background-color: #f5edff;
+  -webkit-box-shadow: 0 9px 12px 0px #d5d5d5;
+          box-shadow: 0 9px 12px 0px #d5d5d5;
+  color: #9356DC;
+}
+
+#use ol li:hover i {
+  color: #9356DC;
+}
+
+#use ol li::after {
+  position: absolute;
+  left: -12px;
+  width: 17px;
+  height: 17px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  counter-increment: li;
+  content: counter(li);
+  font-size: .8rem;
+  padding: 2px;
+}
+
+#use .mobile,
+.list,
+.store {
+  font-family: "fontawesome";
+  padding-right: 15px;
+  color: #7e7e7e;
+}
+
+#restaurant {
+  background-color: #f6f6f6;
+  padding: 50px 20px 50px 20px;
+}
+
+#restaurant h2 {
+  padding-bottom: 20px;
+}
+
+#restaurant .card {
+  width: 100%;
+  margin: 20px auto;
+  background-color: white;
+  -webkit-box-shadow: 0 0px 10px #d2d2d2;
+          box-shadow: 0 0px 10px #d2d2d2;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#restaurant .card_image {
+  height: 190px;
+  position: relative;
+}
+
+#restaurant .card_image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 190px;
+}
+
+#restaurant .card_image .new {
+  color: #3a8562;
+  background-color: #99e2cf;
+  padding: 7px 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: 'roboto_medium';
+  font-size: .8rem;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+#restaurant #palette,
+#restaurant #francaise,
+#restaurant #delice {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+#restaurant #note {
+  -o-object-position: 0 -140px;
+     object-position: 0 -140px;
+}
+
+#restaurant .card_body {
+  height: 80px;
+  padding: 15px;
+  line-height: 15px;
+}
+
+#restaurant .card_body .card_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "fontawesome";
+  content: "\f004";
+}
+
+#restaurant .card_body .card_title h3 {
+  font-weight: bold;
+}
+
+#restaurant p {
+  font-family: 'roboto_thin';
+}
+
+.heart_mix {
+  position: relative;
+  top: 10px;
+}
+
+.heart_mix .fa-solid {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+footer {
+  background-color: #353535;
+  color: #fff;
+  padding: 20px 0 30px 20px;
+  line-height: 25px;
+}
+
+footer h2 {
+  font-family: "shrikhand";
+  font-weight: lighter;
+  padding-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+footer li:first-child::before {
+  font-family: "fontawesome";
+  padding-right: 15px;
+  color: #FFFF;
+  font-size: .9rem;
+  content: "\f2e7";
+}
+
+footer li:nth-child(2)::before {
+  font-family: "fontawesome";
+  padding-right: 15px;
+  color: #FFFF;
+  font-size: .9rem;
+  content: "\f363";
+}
+
+footer a {
+  color: #fff;
+}
+
+.top {
+  height: 270px;
+}
+
+.top img {
+  z-index: -1;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 250px;
+}
+
+.top #enchant {
+  -o-object-position: 0 -160px;
+     object-position: 0 -160px;
+}
+
+.main_menu {
+  margin-top: -50px;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  padding: 30px 15px 10px 15px;
+}
+
+.main_menu .top_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main_menu h1 {
+  font-family: "shrikhand";
+  font-size: 1.7rem;
+  font-weight: normal;
+}
+
+.main_menu .heart_mix {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 40px;
+  top: -5px;
+  left: -25px;
+}
+
+.main_menu h2 {
+  margin: 20px 0 20px 0;
+  font-family: 'roboto_thin';
+  border-bottom: 4px solid #99E2D0;
+  padding: 0 15px 10px 0;
+  width: 50px;
+  font-size: 1rem;
+}
+
+.main_menu .menu {
+  background-color: #fff;
+  padding: 15px 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 6px 9px 0px #d5d5d5;
+          box-shadow: 0 6px 9px 0px #d5d5d5;
+  overflow: hidden;
+}
+
+.main_menu .menu .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.main_menu .menu .card_title {
+  line-height: 25px;
+  overflow: hidden;
+  height: 50px;
+}
+
+.main_menu .menu .card_title h3 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.main_menu .menu .card_title p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.main_menu .menu p:nth-child(2) {
+  font-family: 'roboto_thin';
+}
+
+.main_menu .menu .bar::after {
+  font-family: "fontawesome";
+  content: "\f00c";
+  color: #99E2D0;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background-color: #FFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 25px;
+  font-size: 1.3rem;
+}
+
+.main_menu .menu .bar {
+  background-color: #99E2D0;
+  width: 110px;
+  margin: -20px -125px;
+}
+
+.main_menu .menu:hover .bar {
+  -webkit-transform: translateX(-80px);
+          transform: translateX(-80px);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.main_menu .menu:hover .bar::after {
+  -webkit-animation: mymove .7s;
+          animation: mymove .7s;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.main_menu .menu:hover .card {
+  width: calc(100% - 100px);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  white-space: nowrap;
+}
+
+.main_menu .menu .price {
+  position: relative;
+  bottom: -25px;
+  font-weight: bold;
+}
+
+.main_menu .order {
+  font-size: .9rem;
+  font-family: 'roboto_medium';
+  color: #f6f6f6;
+  border-radius: 30px;
+  padding: 15px 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  margin: auto;
+  opacity: 1;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+  width: 200px;
+  padding: 17px;
+  display: block;
+  margin: 50px auto 80px;
+  text-align: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+  font-weight: normal;
+}
+
+.main_menu .order:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: .8;
+}
+
+.spinner {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  -webkit-animation-name: loading;
+          animation-name: loading;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+}
+
+.spinner .fa-spinner {
+  font-size: 2.5rem;
+  -webkit-animation: mymove 2s infinite forwards;
+          animation: mymove 2s infinite forwards;
+  position: fixed;
+}
+
+.menu_1 {
+  -webkit-animation: slidein 0.6s ease-in-out;
+          animation: slidein 0.6s ease-in-out;
+}
+
+.menu_2 {
+  -webkit-animation: slidein 1.2s ease-in-out;
+          animation: slidein 1.2s ease-in-out;
+}
+
+.menu_3 {
+  -webkit-animation: slidein 1.8s ease-in-out;
+          animation: slidein 1.8s ease-in-out;
+}
+
+.menu_4 {
+  -webkit-animation: slidein 2.4s ease-in-out;
+          animation: slidein 2.4s ease-in-out;
+}
+
+.menu_5 {
+  -webkit-animation: slidein 3s ease-in-out;
+          animation: slidein 3s ease-in-out;
+}
+
+.menu_6 {
+  -webkit-animation: slidein 3.6s ease-in-out;
+          animation: slidein 3.6s ease-in-out;
+}
+
+.menu_7 {
+  -webkit-animation: slidein 4.2s ease-in-out;
+          animation: slidein 4.2s ease-in-out;
+}
+
+.menu_8 {
+  -webkit-animation: slidein 4.8s ease-in-out;
+          animation: slidein 4.8s ease-in-out;
+}
+
+.menu_9 {
+  -webkit-animation: slidein 5.4s ease-in-out;
+          animation: slidein 5.4s ease-in-out;
+}
+
+.menu_10 {
+  -webkit-animation: slidein 6s ease-in-out;
+          animation: slidein 6s ease-in-out;
+}
+
+.heart_mix:hover .fa-solid {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+  #restaurant nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #restaurant .card {
+    width: 44%;
+    margin: 20px;
+  }
+  .top {
+    height: 350px;
+  }
+  top img {
+    margin-top: 40px;
+    height: 450px;
+  }
+  .fa-arrow-left {
+    position: relative;
+    font-size: 2rem;
+    left: 110px;
+    top: 18px;
+  }
+  .main_menu .top_menu {
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-right: 40px;
+  }
+  .main_menu h1 {
+    margin-left: 30px;
+  }
+  .main_menu .menu:hover .card {
+    width: 650px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    white-space: nowrap;
+  }
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url(font/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "roboto_thin";
+  src: url(font/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: "roboto_medium";
+  src: url(font/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "roboto_bold";
+  src: url(font/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: "shrikhand";
+  src: url(font/Shrikhand-Regular.ttf);
+}
+
+form {
+  -webkit-box-shadow: inset 0 8px 3px -4px #d5d5d5;
+          box-shadow: inset 0 8px 3px -4px #d5d5d5;
+  background-color: #eaeaea;
+  border-width: 0;
+  width: 100%;
+  text-align: center;
+}
+
+form input {
+  -webkit-box-shadow: inset 0 8px 3px -4px #d5d5d5;
+          box-shadow: inset 0 8px 3px -4px #d5d5d5;
+  background-color: #eaeaea;
+  padding: 15px 0 15px 0;
+  font-size: 1.1rem;
+  border: 0;
+}
+
+form::before {
+  font-family: "fontawesome";
+  content: "\f3c5";
+  padding: 15px;
+  border-radius: 15px 0 0 15px;
+}
+
+#mobilesite {
+  max-width: 800px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2 {
+  font-size: 1.3rem;
+  font-family: "roboto_medium";
+}
+
+.fa-heart {
+  font-size: 1.5rem;
+}
+
+.heart_mix .fa-solid {
+  color: transparent;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+/*# sourceMappingURL=main.css.map */

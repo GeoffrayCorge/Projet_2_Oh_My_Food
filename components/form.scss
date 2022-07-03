@@ -1,0 +1,23 @@
+@import "../abstracts/font";
+@import "../abstracts/mixin";
+
+form {
+    @include box_shadow_form;
+    border-width: 0;
+    width: 100%;
+    text-align: center;
+
+    input {
+        @include box_shadow_form;
+        padding: 15px 0 15px 0;
+        font-size: 1.1rem;
+        border: 0;
+    }
+}
+
+form::before {
+    font-family: $fontawesome;
+    content: "\f3c5";
+    padding: 15px;
+    border-radius: 15px 0 0 15px;
+}
