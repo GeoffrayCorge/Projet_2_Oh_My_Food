@@ -1,3 +1,14 @@
+@use "abstracts/font" as f;
+@use "abstracts/animations";
+@use "abstracts/keyframes";
+@use "layout/header";
+@use "layout/main";
+@use "layout/footer";
+@use "pages/menu";
+@use "mediaqueries";
+@use "components/form";
+
+
 * {
     box-sizing: border-box;
     /* Opera/IE 8+ */
@@ -10,19 +21,6 @@
     font-family: "roboto";
     list-style-type: none
 }
-
-@import "abstracts/font";
-@import "abstracts/color";
-@import "abstracts/mixin";
-@import "abstracts/keyframes";
-@import "layout/header";
-@import "layout/main";
-@import "layout/footer";
-@import "pages/menu";
-@import "abstracts/animations";
-@import "mediaqueries";
-@import "components/form.scss";
-
 
 
 

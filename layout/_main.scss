@@ -1,5 +1,10 @@
+@use "../abstracts/color" as c;
+@use "../abstracts/mixin" as m;
+@use "../abstracts/font" as f;
+
+
 #reserve {
-    background-color: $background_color;
+    background-color: c.$background_color;
     display: flex;
     flex-direction: column;
     padding: 40px 20px 50px 20px;
@@ -16,7 +21,7 @@
     }
 
     a {
-        @include btn_a;
+        @include m.btn_a;
 
         &:hover {
             transform: scale(1.1);
@@ -39,7 +44,7 @@
         counter-reset: li;
 
         li {
-            background-color: $background_color;
+            background-color: c.$background_color;
             padding: 25px;
             margin: 20px 0 20px 15px;
             border-radius: 20px;
@@ -49,12 +54,12 @@
             &:hover {
                 background-color: #f5edff;
                 box-shadow: 0 9px 12px 0px #d5d5d5;
-                color: $first_color;
+                color: c.$first_color;
 
             }
 
             &:hover i {
-                color: $first_color;
+                color: c.$first_color;
             }
 
             &::after {
@@ -79,12 +84,12 @@
 #use .mobile,
 .list,
 .store {
-    @include logo_li;
+    @include m.logo_li;
 }
 
 
 #restaurant {
-    background-color: $background_color;
+    background-color: c.$background_color;
     padding: 50px 20px 50px 20px;
 
     h2 {
@@ -92,7 +97,7 @@
     }
 
     .card {
-        @include card_welcome;
+        @include m.card_welcome;
     }
 
     .card_image {
@@ -138,7 +143,7 @@
         .card_title {
             display: flex;
             justify-content: space-between;
-            font-family: $fontawesome;
+            font-family: f.$fontawesome;
             content: "\f004";
 
 

@@ -1,3 +1,6 @@
+@use "_color" as c;
+
+
 //loading
 
 .spinner {
@@ -30,8 +33,8 @@
 // animation for hearts
 
 .heart_mix:hover .fa-solid{
-        background: $mix_color;
-        -webkit-background-clip: text;
+        background: c.$mix_color;
+        background-clip: text;
         opacity: 1;
         // height:100%;
         // width: 100%;
