@@ -1,0 +1,58 @@
+@use "abstracts/font" as f;
+@use "abstracts/animations";
+@use "abstracts/keyframes";
+@use "layout/header";
+@use "layout/main";
+@use "layout/footer";
+@use "pages/menu";
+@use "mediaqueries";
+@use "components/form";
+
+
+* {
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    -moz-box-sizing: border-box;
+    /* Firefox, autres Gecko */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, autres WebKit */
+    margin: 0;
+    padding: 0;
+    font-family: "roboto";
+    list-style-type: none
+}
+
+
+
+#mobilesite {
+    max-width: 800px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2 {
+    font-size: 1.3rem;
+    font-family: "roboto_medium";
+}
+
+.fa-heart {
+    font-size: 1.5rem;
+}
+
+.heart_mix .fa-solid {
+    color: transparent;
+    transition: all .7s;
+}
+
+input[type=text]:focus {
+    outline: none;
+}

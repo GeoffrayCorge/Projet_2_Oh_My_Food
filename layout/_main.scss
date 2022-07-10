@@ -1,0 +1,176 @@
+@use "../abstracts/color" as c;
+@use "../abstracts/mixin" as m;
+@use "../abstracts/font" as f;
+
+
+#reserve {
+    background-color: c.$background_color;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 50px 20px;
+    text-align: center;
+
+    h1 {
+        margin: 0 60px 20px 60px;
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        font-family: "roboto_thin";
+    }
+
+    a {
+        @include m.btn_a;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all .2s ease-in-out;
+            opacity: .8;
+        }
+    }
+}
+
+#use {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 20px 25px 20px;
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    ol {
+        counter-reset: li;
+
+        li {
+            background-color: c.$background_color;
+            padding: 25px;
+            margin: 20px 0 20px 15px;
+            border-radius: 20px;
+            box-shadow: 0 6px 9px 0px #d5d5d5;
+            position: relative;
+
+            &:hover {
+                background-color: #f5edff;
+                box-shadow: 0 9px 12px 0px #d5d5d5;
+                color: c.$first_color;
+
+            }
+
+            &:hover i {
+                color: c.$first_color;
+            }
+
+            &::after {
+                position: absolute;
+                left: -12px;
+                width: 17px;
+                height: 17px;
+                background-color: #9356DC;
+                border-radius: 50%;
+                color: #fff;
+                text-align: center;
+                counter-increment: li;
+                content: counter(li);
+                font-size: .8rem;
+                padding: 2px;
+            }
+        }
+    }
+}
+
+
+#use .mobile,
+.list,
+.store {
+    @include m.logo_li;
+}
+
+
+#restaurant {
+    background-color: c.$background_color;
+    padding: 50px 20px 50px 20px;
+
+    h2 {
+        padding-bottom: 20px;
+    }
+
+    .card {
+        @include m.card_welcome;
+    }
+
+    .card_image {
+        height: 190px;
+        position: relative;
+
+        img {
+            object-fit: cover;
+            height: 190px;
+        }
+
+        .new {
+            color: #3a8562;
+            background-color: #99e2cf;
+            padding: 7px 12px;
+            width: fit-content;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-family: 'roboto_medium';
+            font-size: .8rem;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+    }
+
+    #palette,
+    #francaise,
+    #delice {
+        object-position: bottom;
+    }
+
+    #note {
+        object-position: 0 -140px;
+    }
+
+    .card_body {
+        height: 80px;
+        padding: 15px;
+        line-height: 15px;
+
+
+        .card_title {
+            display: flex;
+            justify-content: space-between;
+            font-family: f.$fontawesome;
+            content: "\f004";
+
+
+            h3 {
+                font-weight: bold;
+            }
+        }
+    }
+
+    p {
+        font-family: 'roboto_thin';
+    }
+
+}
+
+
+
+.heart_mix {
+    position: relative;
+    top: 10px;
+
+    .fa-solid {
+        position: absolute;
+        left: 0;
+        opacity: 0; //fill slowly
+        // height:0; //fill top to bottom
+        // width: 0; //fill left to right
+    }
+
+}

@@ -1,0 +1,42 @@
+@use "_color" as c;
+
+
+//loading
+
+.spinner {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    .fa-spinner {
+        font-size: 2.5rem;
+        animation: mymove 2s infinite forwards;
+        position: fixed;
+    }
+}    
+
+//animation for menus
+
+@for $i from 1 to 11 {
+    .menu_#{$i} {
+        animation: slidein .6s*$i  ease-in-out;
+    }
+}
+
+
+// animation for hearts
+
+.heart_mix:hover .fa-solid{
+        background: c.$mix_color;
+        background-clip: text;
+        opacity: 1;
+        // height:100%;
+        // width: 100%;
+        cursor: pointer;
+    }
