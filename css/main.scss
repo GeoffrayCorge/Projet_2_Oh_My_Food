@@ -1,12 +1,12 @@
-@use "abstracts/font" as f;
-@use "abstracts/animations";
-@use "abstracts/keyframes";
-@use "layout/header";
-@use "layout/main";
-@use "layout/footer";
-@use "pages/menu";
+@use "../abstracts/font" as f;
+@use "../abstracts/animations";
+@use "../abstracts/keyframes";
+@use "../layout/header";
+@use "../layout/main";
+@use "../layout/footer";
+@use "menu";
 @use "mediaqueries";
-@use "components/form";
+@use "../components/form";
 
 
 * {
