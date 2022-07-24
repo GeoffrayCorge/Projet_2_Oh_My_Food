@@ -32,7 +32,6 @@
   justify-content: center;
   display: flex;
   background-color: white;
-  padding-bottom: 125%;
 }
 .spinner .fa-spinner {
   font-size: 2.5rem;
@@ -532,6 +531,9 @@ footer a {
     width: 650px;
     transition: all 0.5s ease-in-out;
     white-space: nowrap;
+  }
+  .spinner {
+    padding-bottom: 0;
   }
 }
 form {
