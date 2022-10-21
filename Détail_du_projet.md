@@ -1,3 +1,1 @@
-Il fallait reproduire une maquette à l'identique.
-
-HTML et CSS
+Transformez une maquette en site web avec HTML & CSS
